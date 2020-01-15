@@ -1,0 +1,20 @@
+<head>
+    <body>
+        <p>
+            <button class="clickMe" id="clickme1">First Button</button>
+            <button class="clickMe" id="clickme2">Second Button</button>
+            <button class="clickMe" id="clickme3">third Button</button>
+            <button class="donotClickMe" id="clickme3">donot click me Button</button>
+        </p>
+    </body>
+    <script>
+        let btns = document.querySelectorAll('clickMe');
+
+        // this is an event delegation approach
+        window.addEventListener('click', (event)=>{
+            if(event.target.matches('.clickMe')) {
+                console.log('event triggered without event listener');
+            }
+        })
+    </script>
+</head>
